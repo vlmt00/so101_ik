@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "so101-ik"
+version = "0.1.0"
+description = "SO-101 URDF-based constrained IK/FK and Swift debug simulator"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.optional-dependencies]
+simulation = ["roboticstoolbox-python>=1.1.0", "swift-sim>=1.1.0", "matplotlib>=3.7", "spatialmath-python>=1.1"]
+test = ["pytest>=7"]
+
+[project.scripts]
+so101-ik = "so101_ik.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
